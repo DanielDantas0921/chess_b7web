@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const STREAMERS_API_URL = 'https://api.chess.com/pub/streamers'
-const STREAMERS_PER_PAGE = 10
+const STREAMERS_PER_PAGE = 12
 
 type Streamer = {
   username: string

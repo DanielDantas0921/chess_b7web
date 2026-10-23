@@ -2,7 +2,7 @@
 
 ## 1. Visão geral
 
-Criar uma aplicação web em React para consultar e exibir streamers listados pela Chess.com. A interface apresenta os streamers em cards com avatar, nome de usuário, status de transmissão e um link para o canal na Twitch. A lista é dividida em páginas de 10 streamers.
+Criar uma aplicação web em React para consultar e exibir streamers listados pela Chess.com. A interface apresenta os streamers em cards com avatar, nome de usuário, status de transmissão e um link para o canal na Twitch. A lista é dividida em páginas de 12 streamers.
 
 ## 2. Problema e objetivo
 
@@ -24,7 +24,7 @@ Encontrar rapidamente os canais de Twitch dos streamers de xadrez e identificar 
 - Exibir os streamers retornados em cards.
 - Mostrar avatar, username e status Online ou Offline.
 - Disponibilizar um botão para acessar a Twitch de cada streamer.
-- Paginar os resultados no cliente, mostrando 10 streamers por página.
+- Paginar os resultados no cliente, mostrando 12 streamers por página.
 - Manter em memória os dados recebidos para trocar de página sem refazer a requisição.
 - Usar React com `useState` e `useEffect`; outros hooks precisam ser aprovados antes da implementação.
 
@@ -52,11 +52,11 @@ Para cada streamer, apresentar:
 
 ### RF-03 — Paginar resultados
 
-- Exibir até 10 streamers por página.
+- Exibir até 12 streamers por página.
 - Apresentar controles de paginação abaixo da lista.
 - Ao selecionar uma página, atualizar os cards exibidos sem buscar os dados novamente.
 - Não permitir navegação para uma página anterior à primeira ou posterior à última.
-- Se a lista tiver até 10 resultados, não há necessidade de exibir controles de paginação.
+- Se a lista tiver até 12 resultados, não há necessidade de exibir controles de paginação.
 
 ### RF-04 — Estados da consulta
 
@@ -67,7 +67,7 @@ Para cada streamer, apresentar:
 ## 6. Requisitos de interface e experiência
 
 - O conteúdo do cabeçalho deve ficar dentro de um container com largura máxima, evitando que se estenda excessivamente em telas largas.
-- Em telas largas, organizar os cards em duas colunas.
+- Em telas desktop, organizar os cards em três colunas; usar duas colunas em telas intermediárias e uma coluna em telas estreitas.
 - Em cada card, posicionar as informações à esquerda e a foto/avatar à direita.
 - Colocar a paginação abaixo dos cards.
 - Identificar visualmente os estados Online e Offline e tornar os controles de paginação compreensíveis.
@@ -101,11 +101,11 @@ Os demais campos retornados, como `url`, `is_community_streamer` e `platforms`, 
 1. A aplicação consulta o endpoint e usa os dados retornados para montar a lista.
 2. Cada card mostra o username, o avatar e o status correspondente a `is_live`.
 3. O botão de cada card abre a URL definida em `twitch_url`.
-4. Com 11 ou mais streamers, a primeira página mostra no máximo 10 e a página seguinte mostra os próximos resultados.
+4. Com 13 ou mais streamers, a primeira página mostra no máximo 12 e a página seguinte mostra os próximos resultados.
 5. Trocar de página não dispara uma nova consulta ao endpoint.
 6. A paginação não permite acessar páginas fora do intervalo disponível.
 7. Os estados de carregamento, erro e lista vazia são comunicados ao usuário.
-8. Em telas largas, os cards são organizados em duas colunas e o cabeçalho respeita uma largura máxima.
+8. Em telas desktop, os cards são organizados em três colunas; em telas intermediárias, em duas; e em telas estreitas, em uma. O cabeçalho respeita uma largura máxima.
 9. A implementação utiliza apenas `useState` e `useEffect`, salvo autorização prévia para outro hook.
 
 ## 10. Regras complementares

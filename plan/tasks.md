@@ -24,14 +24,14 @@
 
 ## 4. Implementar paginação no cliente
 
-- [x] Exibir no máximo 10 streamers por página, usando a lista já armazenada.
-- [x] Adicionar controles de paginação abaixo dos cards quando houver mais de 10 resultados.
+- [x] Exibir no máximo 12 streamers por página, usando a lista já armazenada.
+- [x] Adicionar controles de paginação abaixo dos cards quando houver mais de 12 resultados.
 - [x] Fazer os controles exibirem a página selecionada e atualizarem os cards sem uma nova consulta à API.
 - [x] Impedir a navegação para páginas anteriores à primeira ou posteriores à última.
 
 ## 5. Aplicar o layout responsivo
 
-- [x] Organizar os cards em duas colunas em telas largas.
+- [x] Organizar os cards em três colunas no desktop, duas em telas intermediárias e uma em telas estreitas.
 - [x] Garantir que a lista e os controles de paginação permaneçam utilizáveis em telas menores.
 - [x] Diferenciar visualmente os status Online e Offline e identificar claramente os controles de paginação.
 
@@ -39,7 +39,7 @@
 
 - [x] Confirmar que cada card mostra os dados correspondentes ao streamer retornado pela API.
 - [x] Confirmar que `twitch_url` é usado como destino principal e que os fallbacks definidos funcionam.
-- [x] Confirmar que 11 ou mais resultados são distribuídos em páginas de até 10 itens.
+- [x] Confirmar que 13 ou mais resultados são distribuídos em páginas de até 12 itens.
 - [x] Confirmar que mudar de página não dispara outra consulta ao endpoint.
 - [x] Confirmar os comportamentos de carregamento, erro, lista vazia e limites de paginação.
 - [x] Executar os testes, lint e/ou build disponíveis no projeto e corrigir falhas relacionadas à implementação.
